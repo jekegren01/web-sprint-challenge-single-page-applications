@@ -1,4 +1,4 @@
-# Single Page Applications Sprint Challenge
+# Single Page Applications Sprint Challenge`
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
