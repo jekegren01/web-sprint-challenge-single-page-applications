@@ -3,14 +3,13 @@ import Header from './components/Header';
 import Pizza from './Assets/Pizza.jpg';
 import { Route, Link, Switch } from 'react-router-dom';
 import Order from './components/Order';
+import Home from './components/Home';
 
 const App = () => {
   const [pizza, setPizza] = useState([]);
 
   return (
     <div >
-      <h1>Lambda Eats</h1>
-      <img src={Pizza} alt='pic of pizza' />
       {/* <Header /> */}
       <nav>
         <div className='nav-links'>
@@ -21,6 +20,9 @@ const App = () => {
       <Switch>
         <Route path="/order">
           <Order pizza={pizza} setPizza={setPizza}/>
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </div>
