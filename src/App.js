@@ -6,7 +6,12 @@ import Order from './components/Order';
 import Home from './components/Home';
 
 const App = () => {
-  const [pizza, setPizza] = useState([]);
+  const [pizza, setPizza] = useState({
+    name: "",
+    size: "",
+    toppings: [],
+    specialInstructions: "",
+  });
 
   return (
     <div >
