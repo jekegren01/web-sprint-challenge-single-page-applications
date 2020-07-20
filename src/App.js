@@ -9,9 +9,22 @@ const App = () => {
   const [pizza, setPizza] = useState({
     name: "",
     size: "",
-    toppings: [],
+    pepperoni: false,
+    ham: false,
+    olives: false,
+    onion: false,
     specialInstructions: "",
   });
+
+  const onInputChange = e =>{
+    let value = e.target.value;
+    if(e.target.type === "checkbox") value = e.target.checked;
+    setPizza({
+      ...pizza,
+      [e.target.name]: value
+    })
+  }
+  console.log(pizza)
 
   return (
     <div >
@@ -24,7 +37,7 @@ const App = () => {
       </nav>
       <Switch>
         <Route path="/order">
-          <Order pizza={pizza} setPizza={setPizza}/>
+          <Order pizza={pizza} setPizza={setPizza} onInputChange={onInputChange}/>
         </Route>
         <Route path="/">
           <Home />

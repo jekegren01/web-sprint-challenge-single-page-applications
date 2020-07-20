@@ -12,7 +12,7 @@ export default function Order(props) {
                     <small>required</small>
                 </div>
                 <label htmlFor="name">Name: </label>
-                <input id="name" name="name" type="text"/>
+                <input onChange={props.onInputChange} id="name" name="name" type="text"/>
             </section>
             <section>
                 <div className="form-heading">
@@ -20,7 +20,7 @@ export default function Order(props) {
                     <small>required</small>
                 </div>
                 <label htmlFor="size">Size: </label>
-                <select id="size" name="size">
+                <select onChange={props.onInputChange} id="size" name="size">
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="large">Large</option>
@@ -32,16 +32,16 @@ export default function Order(props) {
                     <small>choose up to 4</small>
                 </div>
                 <label htmlFor="pepperoni">
-                   Pepperoni <input name="pepperoni" id="pepperoni" type="checkbox"/>
+                   Pepperoni <input onChange={props.onInputChange} name="pepperoni" id="pepperoni" type="checkbox"/>
                 </label>
                 <label htmlFor="olives">
-                   Olives <input name="olives"  id="olives" type="checkbox"/>
+                   Olives <input onChange={props.onInputChange} name="olives"  id="olives" type="checkbox"/>
                 </label>
                 <label htmlFor="ham">
-                   Ham <input name="ham"  id="ham" type="checkbox"/>
+                   Ham <input onChange={props.onInputChange} name="ham"  id="ham" type="checkbox"/>
                 </label>
                 <label htmlFor="onion">
-                   Onion <input name="onion"  id="onion" type="checkbox"/>
+                   Onion <input onChange={props.onInputChange} name="onion"  id="onion" type="checkbox"/>
                 </label>
             </section>
             <section>
@@ -49,7 +49,7 @@ export default function Order(props) {
                     <h2>Anything Else?</h2>
                 </div>
                 <label htmlFor="specialInstructions">Special instructions: </label>
-                <input name="specialInstructions" id="specialInstructions" type="text"/>
+                <input onChange={props.onInputChange} name="specialInstructions" id="specialInstructions" type="text"/>
             </section>
             <button>Add to Order</button>
         </form>
