@@ -1,10 +1,12 @@
 import React from 'react';
+import axios from 'axios';
+import * as yup from 'yup';
 
 export default function Order(props) {
     return (
         <div className="build-pizza">
 
-        <form>
+        <form onSubmit={props.submit}>
             <h1>Build Your Pizza</h1>
             <section>
                 <div className="form-heading">
@@ -13,6 +15,9 @@ export default function Order(props) {
                 </div>
                 <label htmlFor="name">Name: </label>
                 <input value={props.pizza.name} onChange={props.onInputChange} id="name" name="name" type="text"/>
+                <div className="errors">
+                     {props.errors.name}
+                 </div>
             </section>
             <section>
                 <div className="form-heading">
@@ -53,6 +58,7 @@ export default function Order(props) {
             </section>
             <button>Add to Order</button>
         </form>
+        
     </div>
     );
 };
