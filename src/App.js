@@ -22,6 +22,8 @@ const App = () => {
 
   });
 
+  const [orders, setOrders] = useState([]);
+
   const onInputChange = e =>{
     e.persist();
     let value = e.target.value;
@@ -72,7 +74,7 @@ const App = () => {
     axios.post("https://reqres.in/api/pizza", pizza)
     .then((data) => {
       console.log(data)
-      setPizza([...pizza, data.data])})
+      setOrders([...orders, data.data])})
       .catch(err=>{
       console.log(err);
     })
@@ -93,11 +95,15 @@ console.log(pizza);
           {/* After order button is pushed */}
         <div>
         Order Information
-          {/* {pizza.map((onepizza, i) =>(
+          {orders.map((order, i) =>(
             <div key={i}>
-              {onepizza}
+              {order.name}
+              {order.size}
+              {order.pepperoni}
+              {order.ham}
+              
             </div>
-          ))} */}
+          ))}
         </div>
        
         </Route>
